@@ -57,6 +57,26 @@ public interface Comparable<T> {
 }
 \end{lstlisting}
 
+\subsection{Comparator Interface}
+\begin{lstlisting}
+public interface Comparator<T> {
+	int compare(T first, T second); //Returns Negative if second is greater, 0 if equal, Positive if second is less
+}
+\end{lstlisting}
+
+\subsection{Sorting}
+\begin{itemize}
+	\item Arrays.sort(a), Collections.sort(a) //a is comparable
+	\item Arrays.sort(a, cmp), Collections.sort(a, cmp) //cmp is a comparator
+\end{itemize}
+
+\subsection{Priority Queue (Heap)}
+\begin{itemize}
+	\item Comparable Constructor: new PriorityQueue<>();
+	\item Comparator Constructor: new PriorityQueue<>(int initialSize, Comparator cmp);
+	\item Main Operations: add(elem), peek(), poll() //removes min
+\end{itemize}
+
 Integer.compare(int a, int b);
 
 \section{Heaps (Priority Queues)}
@@ -109,6 +129,24 @@ Algorithm: Build a sorted array one element at a time by comparing each new elem
 \begin{itemize}
 	\item Running-Time: \(O(n^2) \)(Average, Worst-Case), \(O(n) \) (Best-Case)
 	\item Advantage: Efficient way to add new elements to a presorted list; Stable, In-Place, Suitable for Small Sets
+\end{itemize}
+
+\paragraph{Quicksort:}
+Algorithm: Select a pivot value from the data set and split the set into two subsets: a set that contains all values less than the pivot and a set that contains all values greater than or equal to the pivot.  The pivot/split process is recursively applied to each subset until there are no more subsets to split.
+\begin{itemize}
+	\item Running-Time: \(O(n^2) \)(Worst-Case), \(O(n log(n)) \) (Best-Case, Average-Case)
+	\item For randomly ordered data, the value of the pivot is unrelated to its location, therefore a pivot can be chosen from any location.
+	\item Performance is dependent on the choice of pivot value.
+	\item Maybe Stable, Maybe In-Place
+\end{itemize}
+
+\paragraph{Merge Sort:}
+Algorithm: Split the data set into two or more subsets, sorting the subsets, and then merge them together into the final sorted set.
+\begin{itemize}
+	\item Running-Time:\(O(n log(n)) \) (Best-Case, Average-Case, Worst-Case)
+	\item Good choice for data sets that are too large to fit into memory.
+	\item O(n) Additional Memory required by Merge Step
+	\item Stable, Not In-Place
 \end{itemize}
 
 

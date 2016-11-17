@@ -112,7 +112,7 @@ Integer.compare(int a, int b);
 	\item Stable Algorithm: Preserves the relative order of data elements that are otherwise identical for sorting purposes.
 \end{itemize}
 
-\paragraph{Comparision Algorithms:} Sorting algorithms that only require that there is a way to determine whether one key is less than, equal to, or greater than another key.
+\paragraph{Comparison Algorithms:} Sorting algorithms that only require that there is a way to determine whether one key is less than, equal to, or greater than another key.
 \begin{itemize}
 	\item No comparison algorithm can have a more optimal worst-case running time than O(n log(n)).
 \end{itemize}
@@ -153,6 +153,18 @@ Algorithm: Split the data set into two or more subsets, sorting the subsets, and
 \paragraph{Loop Join Intersection:} Loop through the smaller list and binary search through the second list (if second list is sorted).
 
 \paragraph{Concurrent Intervals Problem:} Sort by Interval Start/End Times; Increment Counter on Start; Decrement Counter on End (Also: Peak Bandwidth Problem)
+
+\section{Recursion}
+
+\paragraph{Arms-Length Recursion:} Short-circuiting the base case by invoking the base case before making a recursive call (saves the last function call).
+
+\paragraph{Permutations:}Compute permutations by splitting array into used and unused sections and swap starting element with current element during recursive calls.
+\begin{itemize}
+	\item Permutation Process: Picking a letter for a given position and performing the permutation process starting at the next position to the right before coming back to change the letter you just picked.
+	\item Algorithm for Strings (Immutable): Maintain an array of boolean values corresponding to the positions of the letters in the input string and use this array to mark letters as used or unused.
+	\item O(n) Additional Memory required by Merge Step
+	\item Stable, Not In-Place
+\end{itemize}
 
 \bibliographystyle{abbrv}
 \bibliography{main}
